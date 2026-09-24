@@ -1,23 +1,23 @@
-name: Deploy Hugo to GitHub Pages
+name: GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Set a branch name to trigger deployment
   pull_request:
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v7
         with:
-          submodules: recursive
+          submodules: true
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Hugo
