@@ -26,6 +26,9 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - name: Clean cache
+        run: rm -rf resources/
+
       - name: Build
         run: hugo --minify
 
