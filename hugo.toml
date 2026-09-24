@@ -1,0 +1,17 @@
+baseURL = 'https://ronsilver.github.io/cecilia-portafolio/'   # Cambiar cuando tengas tu URL de Cloudflare/GitHub Pages
+locale = 'es-ES'                         # Reemplaza a languageCode (obsoleto)
+title = 'Ilustraciones'
+theme = 'gallery'
+
+[params]
+  description = "Galería y portafolio de ilustraciones"
+
+# Solución al ERROR de autor/email en el template rss.xml
+[author]
+  name = "Cecilia Lapenta"
+  email = "contacto@ejemplo.com"         # Puedes dejar un email ficticio o real
+
+# Configuración del motor de procesamiento de imágenes para Hugo
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 85
